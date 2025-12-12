@@ -1,0 +1,63 @@
+
+= cds - C Data Structures Boilerplate
+
+== What Is It?
+
+This isn't a library.
+It's just a bunch of C files illustrating the implementation of usage of these data strctures.
+
+The reason for that is that to make a library, you should make your implementations type generic,
+and C doesn't support type generic data strctures unless you do complicated macros.
+
+In these files, I wanna use real structs and macros to handle them.
+
+That way, if you need to handle, say, ints, floats and strings, you will define three structs,
+but handle them all with the same macro.
+It's a good compromise between maintaining my sanity while coding this and it actually being useful.
+
+All of these are written in ANSI C, to ensure portability.
+You can find the C standards https://www.c-language.org/[here].
+I used the https://port70.net/~nsz/c/c89/c89-draft.html[port70.net ANSI C draft] as a baseline.
+
+== What's Inside?
+
+* [ ] `circbuf.c` - Circular (or Ring) Buffer
+* [ ] `dllist.c` - Doubly-Linked List
+* [ ] `queue.c` - Queue, FIFO
+* [ ] `sllist.c` - Singly-Linked List
+* [ ] `stack.c` - Stack, FILO
+* [x] `vector.c` - Vector, or Dynamic Array
+
+== Code Style
+
+I based the code style on my earlier projects.
+It's entirely unprofessional but gets the job done.
+
+I stick to the following:
+
+* 100 character line limit.
+	* I make exceptions for items whose formatting gets messed up with line breaks (ex. lists).
+	* A few characters over every now and then is perfectly fine.
+* Types and variables not meant to be used are prefixed with underscores.
+	* This usually applies to structs with a typedef. I typically do `typedef _a { ... } a`.
+* `camelCase` for functions and variables.
+* `SCREAMING_SNAKE_CASE` for macros.
+* Use AsciiDoc logic for _italic_, *bolded* and `monospaced` stuff in comments.
+* Wrap macros in `do { ... } while(0)` so they work with `if` and `for` statements without blocks.
+
+[source, c]
+----
+/* Single-line comments look like this. */
+
+/*
+ * Multi-line comments look like this.
+ *
+ * Feel free to split paragraphs however.
+ * Here's another line.
+ *
+ * - Here's a list item.
+ *   - Here's a nested list item. Two spaces indentation.
+ * - Here's another list item.
+ */
+----
+
