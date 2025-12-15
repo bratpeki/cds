@@ -1,8 +1,8 @@
 
-#include <stddef.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
+#include <stddef.h> /* `NULL`, `size_t` */
+#include <stdlib.h> /* `realloc`, `free`, `exit` */
+#include <stdio.h> /* `printf` */
+#include <string.h> /* `memmove` */
 
 /*
  * This is an example of an integer vector.
@@ -55,6 +55,10 @@ typedef struct fvec {
  *
  * Make sure `index` is an unsigned type, since this macro doesn't check the lower bound.
  * Preferably, `index` is a `size_t`.
+ *
+ * Some implementations call for shrinking the allocated memory
+ * if the count goes below a certain threshold, usually capacity/2 or capacity/4.
+ * That's not implemented here.
  */
 #define VEC_REMOVE( vec, index ) \
 	do { \

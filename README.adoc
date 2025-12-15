@@ -25,7 +25,7 @@ I used the https://port70.net/~nsz/c/c89/c89-draft.html[port70.net ANSI C draft]
 * [ ] `dllist.c` - Doubly-Linked List
 * [ ] `queue.c` - Queue, FIFO
 * [ ] `sllist.c` - Singly-Linked List
-* [ ] `stack.c` - Stack, FILO
+* [x] `stack.c` - Stack, FILO
 * [x] `vector.c` - Vector, or Dynamic Array
 
 == Code Style
